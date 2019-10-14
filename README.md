@@ -1,6 +1,7 @@
 # Test_ccoperating_VTB
 
 [a relative link](Untitled-2.md)
+[Всплывающие окна QR кодов](QR_alerts.md)
 
 <html>
 <body class="theme-default aui-theme-default">
