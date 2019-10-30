@@ -2,7 +2,7 @@
 
 [a relative link](Untitled-2.md)
 
-![](README.png)
+
 Проверка интеграции c скринштоной программой Ligthshort
 
 | № | Элемент | Описание 
