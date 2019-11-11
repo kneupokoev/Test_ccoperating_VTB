@@ -2,7 +2,9 @@
 
 [a relative link](Untitled-2.md)
 
-Набрал какой-то новый текст
+  [Инвестиции](Investment.md)
+
+
 
 {{Untitled-2.md}}
 #Заголовок 1
