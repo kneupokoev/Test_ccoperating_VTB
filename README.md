@@ -7,6 +7,6 @@
 
 [a relative link3](newlist1.md)
 
-[a relative link](file123.md)
+[a relative link](katalig1\file123.md)
 
 привет
