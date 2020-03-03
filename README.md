@@ -1,16 +1,10 @@
-# Test_ccoperating_VTB
+# Test_ы.
 
 [a relative link](Untitled-2.md)
 
-Набрал какой-то новый текст
 
-{{Untitled-2.md}}
-#Заголовок 1
-Текст заголовка 1
-##Заголовок 2
-Текст заголовка 2
-###Заголовок 3
-Текст заголовка 3
+[a relative link2](list.md)
 
-[6. Прочее](Прочее)
-[6.1 Прочее](Прочее/6.1%20Прочее.md)
+[a relative link3](newlist1.md)
+
+привет
