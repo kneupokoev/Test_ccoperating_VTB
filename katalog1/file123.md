@@ -8,7 +8,8 @@
 
 
 ##картинка:
-![](katalog1\katalogkartinka\file123.png)
+
+![](katalog1/katalogkartinka/file123.png)
 
 
-![](file234.png)
+![](katalog1/katalogkartinka/file234.png)
