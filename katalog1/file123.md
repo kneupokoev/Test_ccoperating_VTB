@@ -6,10 +6,11 @@
 текст
 ```
 
-
-##картинка:
-
-![](katalog1/katalogkartinka/file123.png)
+##картинка
 
 
-![](katalog1/katalogkartinka/file234.png)
+![](katalogkartinka/file123.png)
+
+
+![](katalogkartinka/file234.png)
+
