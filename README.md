@@ -7,4 +7,6 @@
 
 [a relative link3](newlist1.md)
 
+[a relative link](file123.md)
+
 привет
