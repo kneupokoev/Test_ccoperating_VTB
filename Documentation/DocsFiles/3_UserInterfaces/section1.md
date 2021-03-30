@@ -4,3 +4,6 @@
 
 [a relative link](katalog1/file123.md)
 
+Новое требование 1
+
+Новое требование 2
