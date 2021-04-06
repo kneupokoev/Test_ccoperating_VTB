@@ -1,0 +1,241 @@
+@startuml
+abstract        "Application"
+abstract        "Contract"
+abstract        "Borrower"
+abstract        "CoBorrower"
+abstract        "Warranter"
+abstract        "Address"
+abstract        "PledgeAgreement"
+abstract        "InsuranceContract"
+abstract        "Docs"
+abstract        "Agent"
+abstract        "Pos"
+abstract        "Branch"
+abstract        "Files"
+abstract        "PaymentHistory"
+abstract        "PaymentSchedule"
+abstract        "Contact"
+
+abstract        "FiasData"
+abstract        "LostDocData"
+abstract        "InsolventData"
+abstract        "BlackListData"
+abstract        "CourtListData"
+
+Application "1" *-- "0...1" Contract
+
+Contract "1" *-- "0...*" PledgeAgreement
+Contract "1" *-- "0...*" InsuranceContract
+Contract "1" *-- "1" PaymentSchedule
+PaymentSchedule "1" *-- "1" PaymentHistory
+
+Borrower "1" *-- "1" Application
+CoBorrower "0...*" *-- "1" Application
+Warranter "0...*" *-- "1" Application
+
+Borrower "1" *-- "1...*" Contact
+CoBorrower "1" *-- "1...*" Contact
+Warranter "1" *-- "1...*" Contact
+
+Borrower "1" *-- "1...*" Address
+CoBorrower "1" *-- "1...*" Address
+Warranter "1" *-- "1...*" Address
+
+Borrower "1" *-- "1...*" Docs
+CoBorrower "1" *-- "1...*" Docs
+Warranter "1" *-- "1...*" Docs
+
+Agent "1...*" -- "1" Pos
+Agent "1...*" -- "1" Branch
+
+Files "1...*" -- "1" Docs
+
+Agent "1" -- "0...*" Application
+
+Borrower ..> FiasData
+Borrower ..> LostDocData
+Borrower ..> InsolventData
+Borrower ..> BlackListData
+Borrower ..> CourtListData
+
+Warranter ..> FiasData
+Warranter ..> LostDocData
+Warranter ..> InsolventData
+Warranter ..> BlackListData
+Warranter ..> CourtListData
+
+CoBorrower ..> FiasData
+CoBorrower ..> LostDocData
+CoBorrower ..> InsolventData
+CoBorrower ..> BlackListData
+CoBorrower ..> CourtListData
+
+skinparam classAttributeIconSize 0
+class Application {
+ +id
+ +product
+ +amountInquired
+ +amountApproved
+ +termInquired
+ +termApproved
+ +rate
+ +status
+ +validTo
+ +currency
+}
+
+skinparam classAttributeIconSize 0
+class Contract {
+ +id
+ +status
+ +amount
+ +currency
+ +dateFrom
+ +dateTo
+ +pledge
+ +percent
+}
+
+skinparam classAttributeIconSize 0
+class Borrower {
+ +id
+ +status
+ +firstName
+ +patronymicName
+ +lastName
+ +dateOfBirth
+ +birthplace
+ +nationality
+ +citizenship
+ +education
+ +maritalStatus
+ +children
+ +dependent
+ +driverLicense
+ +employer
+ +salary
+}
+
+skinparam classAttributeIconSize 0
+class CoBorrower {
+ +id
+ +firstName
+ +patronymicName
+ +lastName
+ +dateOfBirth
+ +citizenship
+}
+
+skinparam classAttributeIconSize 0
+class Warranter {
+ +id
+ +firstName
+ +patronymicName
+ +lastName
+ +dateOfBirth
+ +citizenship
+ +relationDegree
+}
+
+skinparam classAttributeIconSize 0
+class Address {
+ +id
+ +type
+ +zipCode
+ +country
+ +region
+ +town
+ +street
+ +building
+ +flat
+}
+
+skinparam classAttributeIconSize 0
+class Contact {
+ +id
+ +type
+ +value
+}
+
+skinparam classAttributeIconSize 0
+class PledgeAgreement {
+ +id
+ +dateFrom
+ +dateTo
+ +name
+ +value
+ +property
+}
+
+skinparam classAttributeIconSize 0
+class InsuranceContract {
+ +id
+ +dateFrom
+ +dateTo
+ +amount
+ +cost
+ +risk
+ +insurer
+ +insurant
+ +insured
+ +beneficiary
+ }
+
+skinparam classAttributeIconSize 0
+class Docs {
+ +id
+ +type
+ +serie
+ +number
+ +issuedDate
+ +expiredDate
+ }
+
+skinparam classAttributeIconSize 0
+class Agent {
+ +id
+ +type
+ +firstName
+ +lastName
+}
+
+skinparam classAttributeIconSize 0
+class Pos {
+ +id
+ +group
+ +name
+ +address
+}
+
+skinparam classAttributeIconSize 0
+class Branch {
+ +id
+ +name
+ +address
+}
+
+skinparam classAttributeIconSize 0
+class Files {
+ +id
+ +type
+ +name
+ +content
+}
+
+skinparam classAttributeIconSize 0
+class PaymentHistory {
+ +id
+ +amount
+ +date
+ +status
+}
+
+skinparam classAttributeIconSize 0
+class PaymentSchedule {
+ +id
+ +paid
+ +restForBody
+ +restForRate
+ +payment
+}
+@enduml
