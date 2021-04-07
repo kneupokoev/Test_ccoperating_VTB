@@ -1,0 +1,53 @@
+@startuml
+User -> Frontend: Открыть форму поиска начислений
+activate Frontend
+Frontend --> User: Показать форму поиска начислений
+deactivate Frontend
+
+User -> Frontend: Отправка данных для поиска
+activate Frontend
+
+Frontend -> Backend: Данные для поиска
+activate Backend
+
+Backend -> Backend: Валидация данных
+
+alt валидация прошла успешно
+
+    Backend -> ExternalSystem: Запрос наличия начислений
+    activate ExternalSystem
+    ExternalSystem --> Backend: Результаты поиска
+    deactivate ExternalSystem
+    Backend --> Frontend: Результаты поиска
+    Frontend --> User: Отобразить результаты поиска
+
+else валидация завершилась ошибкой
+
+    Backend --> Frontend: Описание ошибки
+    deactivate Backend
+    Frontend --> User: Отобразить описание ошибки
+    deactivate Frontend
+
+end
+
+User -> Frontend: Сохранить параметры поиска
+activate Frontend
+Frontend --> Backend: Сохранить параметры поиска
+activate Backend
+Backend -> Backend: Валидация данных
+
+alt валидация прошла успешно
+
+    Backend -> Backend: Сохранение данных
+    Backend --> Frontend: Сохранение ОК
+    Frontend --> User: Информация об успешном сохранении
+
+else валидация завершилась ошибкой
+
+    Backend --> Frontend: Описание ошибки
+    deactivate Backend
+    Frontend --> User: Сообщение об ошибке
+    deactivate Frontend
+
+end
+@enduml
